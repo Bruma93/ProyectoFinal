@@ -1,0 +1,75 @@
+main {
+    padding: 6em 10%;
+}
+
+h2,
+h3,
+hr {
+    margin-bottom: 0.5em;
+}
+
+h5 {
+    margin-bottom: 0.3em;
+}
+
+li {
+    list-style: none;
+    font-size: 1em;
+}
+
+li::before {
+    content: "\2611";
+    padding-right: 1em;
+}
+
+main div:not(main div:last-of-type) {
+    margin-bottom: 6em;
+}
+
+@Media (min-width:981px) {
+    main {
+        max-width: 1080px;
+        margin: 6em auto;
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    main div {
+        width: 44%;
+        position: relative;
+    }
+    div#benow::before,
+    div#wom::before,
+    div#wilcox:before,
+    div#expomoto::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+    div#benow:before {
+        background: url(../images/benow.png) no-repeat;
+        transform: rotate( 90deg);
+        opacity: 40%;
+        background-size: 17em;
+    }
+    div#wom:before {
+        background: url(../images/wom.png) no-repeat;
+        transform: rotate( 90deg);
+        opacity: 50%;
+    }
+    div#wilcox:before {
+        background: url(../images/Wilcox.png) no-repeat;
+        opacity: 40%;
+        background-size: 12em;
+        background-position-x: right;
+    }
+    div#expomoto:before {
+        background: url(../images/expomoto.png) no-repeat;
+        transform: rotate( 90deg);
+        opacity: 70%;
+        background-size: 20em;
+    }
+}

@@ -1,0 +1,43 @@
+iframe {
+    max-width: 100%;
+}
+
+main {
+    padding-top: 6em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+main div {
+    display: flex;
+    flex-direction: column;
+    padding: 0 10% 3em;
+}
+
+main i {
+    padding-right: 1em;
+}
+
+@Media (min-width:768px) {
+    main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 6em;
+        max-width: 1080px;
+    }
+    main div {
+        padding-right: 5em;
+        max-width: 50%;
+        box-sizing: border-box;
+    }
+    main a {
+        font-size: 1.2em;
+    }
+}
+
+@Media (min-width:981px) {
+    main div {
+        padding-left: 0;
+    }
+}

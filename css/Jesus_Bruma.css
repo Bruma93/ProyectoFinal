@@ -1,0 +1,375 @@
+/** Section Sobre mi **/
+
+#Sobre-mi {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+
+/*Imagen de la sección, se adapta al tamaño de la caja*/
+
+#Sobre-mi div:first-of-type {
+    height: 13em;
+    width: 13em;
+    max-width: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 1em;
+}
+
+#Sobre-mi div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    object-position: 0 -30px;
+    transform: scale(1.05);
+    transition: 0.4s;
+}
+
+
+/*--------------------------*/
+
+#Sobre-mi p {
+    margin-bottom: 2em;
+}
+
+
+/** Section Experiencia **/
+
+#Experiencia {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: #BDD5EA;
+    padding-top: 3em;
+    padding-bottom: 0;
+}
+
+
+/* Filtro imagen de la section */
+
+#Experiencia img {
+    margin: 0;
+    filter: grayscale(1);
+    opacity: 0.9;
+    transition: 0.4s;
+    position: relative;
+    bottom: -4px;
+}
+
+#Experiencia p {
+    margin-bottom: 2em;
+}
+
+#Experiencia a {
+    margin-bottom: 6em;
+}
+
+
+/** CTA **/
+
+#CTA {
+    background-color: #FE5F55;
+    padding-top: 3em;
+    padding-bottom: 3em;
+    display: flex;
+    align-items: center;
+}
+
+#CTA i {
+    font-size: 3em;
+    padding-right: 0.2em;
+}
+
+#CTA a {
+    font-size: 1.8em;
+    color: #F7F7FF;
+}
+
+
+/* Animación del CTA -> El contenido del span(Llámame) aumenta y disminuye su tamaño*/
+
+#CTA a span {
+    animation-duration: 1.5s;
+    animation-name: growth;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes growth {
+    from {
+        font-size: 1em;
+    }
+    to {
+        font-size: 1.1em;
+    }
+}
+
+#CTA a span {
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+
+/** Section Titulitis **/
+
+#Titulitis {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 6em;
+}
+
+#Titulitis summary {
+    display: flex;
+    justify-content: center;
+}
+
+
+/* Parche para hacer desaparecer la marca de la etiqueta details*/
+
+#Titulitis summary::marker {
+    color: #f7f7ff;
+}
+
+
+/*------*/
+
+
+/* Incremento tamaño de la imagen la hacer hover */
+
+#Titulitis summary img {
+    max-width: 11em;
+    transition: 0.4s;
+    margin-bottom: 2em;
+}
+
+#Titulitis summary img:hover {
+    max-width: 13em;
+}
+
+
+/*----------*/
+
+.logos-pequeños-m {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2em;
+}
+
+
+/* Slider */
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-250px * 10));
+    }
+}
+
+
+/*Da forma a la 'caja' por donde pasarán los logos*/
+
+.slider {
+    background: white;
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
+    height: 100px;
+    margin: 0 auto 4em;
+    overflow: hidden;
+    position: relative;
+    width: 960px;
+    max-width: 100%;
+}
+
+.slider::before,
+.slider::after {
+    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    content: "";
+    height: 100px;
+    position: absolute;
+    width: 200px;
+    z-index: 2;
+}
+
+.slider::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+}
+
+.slider::before {
+    left: 0;
+    top: 0;
+}
+
+
+/*Le da la propiedad de movimiento a los iconos*/
+
+.slider .slide-track {
+    animation: scroll 40s linear infinite;
+    display: flex;
+    width: calc(250px * 5);
+}
+
+.slider .slide {
+    height: 100px;
+    width: 250px;
+    display: contents;
+}
+
+.slider .slide img {
+    height: 100px;
+    padding-right: 3em;
+}
+
+
+/**** Responsive Tablet ****/
+
+@Media (min-width:768px) {
+    /** Section Sobre mi **/
+    #Sobre-mi {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+    }
+    #Sobre-mi div:first-of-type {
+        height: 14em;
+        width: 14em;
+    }
+    #Sobre-mi div:last-of-type {
+        width: 60%;
+    }
+    #Sobre-mi a.boton {
+        margin: 0;
+    }
+    /** Section Experiencia **/
+    #Experiencia {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        text-align: left;
+    }
+    #Experiencia div:first-of-type {
+        width: 55%;
+    }
+    #Experiencia div:last-of-type {
+        align-self: flex-end;
+        width: 40%;
+    }
+    #Experiencia div img:hover {
+        opacity: 1;
+    }
+    #Experiencia a {
+        margin: 0 0 3em;
+    }
+    /** CTA **/
+    #CTA {
+        display: flex;
+        justify-content: center;
+        transition: 0.4s;
+    }
+    #CTA:hover {
+        background-color: #495867;
+    }
+    /** Section Titulitis **/
+    #Titulitis {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 6em;
+    }
+    .logos-grandes {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 3em;
+    }
+    #Titulitis details {
+        min-width: 32%;
+    }
+    #Titulitis details:not(details:last-of-type) {
+        padding-right: 2%;
+    }
+    #Titulitis summary img {
+        width: 90%;
+        margin-bottom: 0;
+        transition: 0.4s;
+    }
+    #Titulitis summary img:hover {
+        transform: scale(1.1);
+    }
+    .logos-pequeños-m {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        margin-bottom: 4em;
+    }
+    .logos-pequeños-m img {
+        width: 17.5%;
+        max-width: fit-content;
+        margin-bottom: 0;
+    }
+    .logos-pequeños-m img:nth-child(2),
+    .logos-pequeños-m img:nth-child(4) {
+        max-width: 20%;
+    }
+}
+
+@Media (min-width:982px) {
+    p {
+        font-size: 18px;
+    }
+    /** Section Sobre mi**/
+    #Sobre-mi {
+        justify-content: center;
+        padding-top: 8em;
+        padding-bottom: 8em;
+    }
+    #Sobre-mi div:first-of-type {
+        height: 20em;
+        width: 20em;
+        max-width: calc(1080px*4/10);
+        margin: 0;
+    }
+    #Sobre-mi div:last-of-type {
+        width: 60%;
+        max-width: calc(1080px*6/10);
+        padding-right: 5em;
+        box-sizing: border-box;
+    }
+    #Sobre-mi div img:hover {
+        transform: scale(1.1);
+    }
+    /** Section Experiencia **/
+    #Experiencia {
+        justify-content: center;
+        padding-top: 8em;
+    }
+    #Experiencia div:first-of-type {
+        width: 60%;
+        max-width: calc(1080px*6/10);
+        padding-left: 5em;
+        box-sizing: border-box;
+    }
+    #Experiencia div:last-of-type {
+        max-width: calc(1080px*4/10);
+    }
+    /** Section Titulitis **/
+    #Titulitis {
+        padding-top: 8em;
+    }
+    #Titulitis img {
+        cursor: help;
+    }
+    .logos-grandes {
+        max-width: 1080px;
+        margin-bottom: 4.5em;
+    }
+    #Titulitis summary img {
+        margin-bottom: 0;
+    }
+}

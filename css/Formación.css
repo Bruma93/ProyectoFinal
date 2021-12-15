@@ -1,0 +1,165 @@
+main {
+    text-align: center;
+    padding: 6em 10%;
+}
+
+
+/** cartacterísticas details **/
+
+details:not(details:last-of-type) {
+    margin-bottom: 12em;
+}
+
+summary {
+    position: relative;
+    margin-top: 8em;
+    border-radius: 0 0 2em 2em;
+    color: #f7f7ff;
+}
+
+summary div:first-of-type {
+    height: 70vw;
+    width: 70vw;
+    max-width: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+    position: absolute;
+    top: -15%;
+    background: #f7f7ff;
+    border: solid 1em;
+}
+
+summary div:first-of-type img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+summary div:last-of-type {
+    padding: 0em 1em 1em;
+    margin: 0 10%;
+}
+
+summary h3 {
+    padding-top: 50vw;
+    margin-bottom: 0;
+    padding-bottom: 0.5em;
+    color: #f7f7ff;
+}
+
+summary p {
+    margin-top: 0;
+}
+
+span {
+    color: #BDD5EA;
+    font-weight: 600;
+}
+
+
+/* Colores del details UJA*/
+
+.formacion-uja summary div:first-of-type {
+    border-color: #495867;
+}
+
+.formacion-uja summary div:first-of-type img {
+    object-position: 0 0.2em;
+}
+
+.formacion-uja summary div:last-of-type {
+    background-color: #495867;
+    color: #f7f7ff;
+}
+
+
+/* Colores del details UMA*/
+
+.formacion-uma summary div:first-of-type img {
+    object-position: 0 0.4em;
+}
+
+.formacion-uma summary div:first-of-type {
+    border-color: #577399;
+}
+
+.formacion-uma summary div:last-of-type {
+    background-color: #577399;
+    color: #f7f7ff;
+}
+
+
+/* Colores del details ESTECH*/
+
+.formacion-estech summary div:first-of-type {
+    border-color: #495867;
+}
+
+.formacion-estech summary div:first-of-type img {
+    object-position: 0 -1em;
+    transform: scale(0.9);
+}
+
+.formacion-estech summary div:last-of-type {
+    background-color: #495867;
+    color: #f7f7ff;
+}
+
+@Media (min-width:768px) {
+    main h2+p {
+        margin-bottom: 4em;
+    }
+    details {
+        margin-top:0;
+        margin-left: auto;
+        margin-right:auto;
+    }
+
+    details:not(details:last-of-type){
+        margin-bottom: 4em;
+    }
+    summary {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 0;
+    }
+    summary div:first-of-type {
+        height: 10em;
+        width: 10em;
+        position: relative;
+        border: solid 0.5em;
+        transition: 0.4s;
+    }
+    summary div:first-of-type:hover {
+        transform: scale(1.1);
+    }
+    summary div:last-of-type {
+        width: 60%;
+        padding: 2em 1em 1em;
+        margin: 0 0;
+        border-radius: 2em;
+    }
+    summary h3 {
+        padding-top: 0;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+}
+
+@Media (min-width:981px) {
+    details {
+        max-width: 1080px;
+    }
+    summary div:first-of-type {
+        height: 15em;
+        width: 15em;
+    }
+
+    summary div:last-of-type:hover {
+        cursor: pointer;
+    }
+}

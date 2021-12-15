@@ -1,0 +1,100 @@
+section h2 {
+    margin-bottom: 0.5em;
+}
+
+section h3 {
+    margin-top: 0;
+}
+
+section:first-of-type {
+    padding-top: 2em;
+}
+
+
+/** Menu flotante interno de la inner page**/
+
+aside {
+    display: flex;
+    justify-content: flex-end;
+    margin: 1em 10%;
+    position: sticky;
+    top: calc(97vh - 6em);
+    z-index: 1;
+}
+
+aside a {
+    width: 2.5em;
+    padding: 0.75em;
+    margin-left: 0.2em;
+    border-radius: 50%;
+    background-color: #495867;
+    transition: 0.4s;
+}
+
+aside a:hover {
+    background-color: #577399;
+}
+
+aside img {
+    filter: invert(1);
+}
+
+
+/** Section Redes Sociales**/
+
+section#redes-sociales div {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+section#redes-sociales div img {
+    width: 100%;
+    transition: 0.4s;
+    margin-bottom: 1em;
+}
+
+@Media (min-width:768px) {
+    section {
+        max-width: 1080px;
+        margin: 0 auto 5em;
+    }
+    /* Section Diseño web*/
+    #diseño-web div div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 1em;
+    }
+    #diseño-web div img {
+        width: 30%;
+        height: min-content;
+        transition: 0.4s;
+    }
+    #diseño-web div img:hover {
+        transform: scale(1.1);
+    }
+    /* Section Redes*/
+    section#redes-sociales div img {
+        width: 32%;
+    }
+    section#redes-sociales div img:hover {
+        box-shadow: -13px 24px 48px -16px black;
+        transform: scale(1.05);
+    }
+    /* Section Ilustraciones */
+    section#ilustraciones div {
+        display: flex;
+    }
+    section#ilustraciones div img {
+        width: auto;
+        max-width: 100%;
+        max-height: 460px;
+        height: 33.5vw;
+        position: relative;
+        transition: 0.4s;
+    }
+    section#ilustraciones div img:hover {
+        transform: translateY(-1em);
+    }
+}
