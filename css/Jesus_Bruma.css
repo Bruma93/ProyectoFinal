@@ -153,13 +153,6 @@
 
 /*----------*/
 
-.logos-pequeños-m {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 2em;
-}
-
-
 /* Slider */
 
 @keyframes scroll {
@@ -183,6 +176,7 @@
     position: relative;
     width: 960px;
     max-width: 100%;
+    z-indez:0;
 }
 
 .slider::before,
